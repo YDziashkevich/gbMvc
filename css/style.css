@@ -27,6 +27,33 @@
     text-align: center;
 }
 
+.nameEmail{
+    text-align: left;
+    font-weight: normal;
+    font-size: 12px;
+    padding-bottom: 5px;
+}
+.messages{
+    text-align: justify;
+    font-weight: normal;
+    font-size: 17px;
+}
+.date{
+    text-align: right;
+    font-weight: normal;
+    font-size: 12px;
+    padding-left: 800px;
+    padding-top: 5px;
+}
+
+
+
+
+
+
+
+
+
 
 .panel.with-nav-tabs .panel-heading{
     padding: 5px 5px 0 5px;

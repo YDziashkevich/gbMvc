@@ -28,7 +28,7 @@ class App
         }
     }
 
-    public static function getCrretController(){
+    public static function getCurrentController(){
         return self::$controllerName;
     }
 }

@@ -83,7 +83,6 @@
                     foreach($errors as $value){
                         echo $value . "<br />";
                     }
-                    echo "Повторите ввод еще раз";
                 }
                 ?>
 
