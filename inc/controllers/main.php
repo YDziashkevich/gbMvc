@@ -17,7 +17,12 @@ class MainController extends Controller
     {
         $formData = array();
         if(!empty($_POST) && isset($_POST["ok"])){
-            $this->form->getData();
+            $validate = $this->form->validateData();
+        }
+        if(!$validate){
+            $formData["errors"] = $this->form->getErrors();
+        }else{
+
         }
         $captcha = CaptchaController::getCaptcha();
         $formData["captcha"] = $captcha;

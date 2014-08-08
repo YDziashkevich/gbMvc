@@ -1,5 +1,5 @@
 
-<form class="form-horizontal">
+<form class="form-horizontal" method="post">
     <fieldset>
         <!-- Form Name -->
         <legend>Enter message</legend>
@@ -66,7 +66,7 @@
                     <div class="control-group">
                         <label class="control-label" for="ok"></label>
                         <div class="controls">
-                            <input type="submit" name="ok" class="btn btn-primary">
+                            <input type="submit" name="ok" class="btn btn-primary" >
                         </div>
                     </div>
                 </div>
@@ -77,7 +77,16 @@
     <div class="row">
         <div class="span12">
             <div id="errors">
-                {{ERRORS}}
+
+                <?php
+                if(isset($errors)){
+                    foreach($errors as $value){
+                        echo $value . "<br />";
+                    }
+                    echo "Повторите ввод еще раз";
+                }
+                ?>
+
             </div>
         </div>
     </div>
