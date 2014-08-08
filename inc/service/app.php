@@ -4,6 +4,9 @@ class App
 {
     private static $controllerName;
 
+    /**
+     * шаблон вызовф controller и action по $_GET параметрам из url
+     */
     public function __construct()
     {
         $url = (isset($_GET["url"])) ? trim($_GET["url"]) : APP_DEFAULT_CONTROLLER;

@@ -1,3 +1,4 @@
+
 <form class="form-horizontal">
     <fieldset>
         <!-- Form Name -->
@@ -52,7 +53,7 @@
                         <label class="control-label" for="captcha"></label>
                         <div class="controls">
                             <div class="input-prepend">
-                                <span class="add-on">{{CAPTCHA}}</span>
+                                <span class="add-on"><?php echo $captcha ?></span>
                                 <input id="captcha" name="captcha" class="input-large" placeholder="answer" type="text">
                             </div>
                         </div>
@@ -81,3 +82,4 @@
         </div>
     </div>
 </form>
+

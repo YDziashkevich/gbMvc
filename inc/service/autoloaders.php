@@ -26,7 +26,7 @@ spl_autoload_register( function($class){
         return true;
     }
 
-    $controllerName = str_replace("Controller", "", strtolower($class));
+    $controllerName = str_replace("controller", "", strtolower($class));
     $controllerFileName="inc/controllers/" . $controllerName . ".php";
 
     if(file_exists($controllerFileName)){
@@ -34,3 +34,25 @@ spl_autoload_register( function($class){
         return true;
     }
 } );
+
+/**
+ * подключение моделей
+ */
+spl_autoload_register(function ($class) {
+    $modelFlag = strpos($class, 'Model');
+    if ($modelFlag === FALSE) {
+        return FALSE;
+    }
+
+    if ($class == 'Model') {
+        require_once('inc/service/model.php');
+        return true;
+    }
+
+    $modelName = str_replace('model', '', strtolower($class));
+    $modelFileName = 'inc/models/' . $modelName . '.php';
+    if (file_exists($modelFileName)) {
+        require_once($modelFileName);
+        return true;
+    }
+});
