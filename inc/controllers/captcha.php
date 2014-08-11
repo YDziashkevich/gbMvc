@@ -2,6 +2,8 @@
 
 class CaptchaController
 {
+    private static $textCaptcha;
+
     public static function getCaptcha()
     {
         $a = rand(10, 18);
@@ -18,6 +20,16 @@ class CaptchaController
                 break;
         }
         $_SESSION["answerCaptcha"]=$ans;
+        self::$textCaptcha=$captchaText;
+        var_dump(self::$textCaptcha);
         return $captchaText;
+    }
+
+    public function showAction($prefix = ""){
+        //$question = Captcha::getCaptchaQuestion($prefix);
+        var_dump(self::$textCaptcha);
+
+        $pic = new ImageModel();
+        $pic->setText(self::$textCaptcha)->send();
     }
 }

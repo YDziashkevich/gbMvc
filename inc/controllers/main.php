@@ -44,6 +44,7 @@ class MainController extends Controller
         //генерируем каптчу
         $captcha = CaptchaController::getCaptcha();
 
+
         ImageModel::$text = $captcha;
 
         //формирование данных для вывода формы

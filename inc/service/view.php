@@ -6,7 +6,6 @@ class View
 
     public function __construct()
     {
-        $this->image = new ImageModel();
 
     }
 
