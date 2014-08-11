@@ -5,11 +5,13 @@ class MainController extends Controller
     private $captcha;
     private $messages;
 
+
     public function __construct()
     {
         parent::__construct();
         $this->captcha = new CaptchaController();
         $this->messages = new MessageModel();
+
     }
 
 
@@ -42,11 +44,15 @@ class MainController extends Controller
         //генерируем каптчу
         $captcha = CaptchaController::getCaptcha();
 
+        ImageModel::$text = $captcha;
+
         //формирование данных для вывода формы
         $formData["sizeStorage"] = count($messages);
         $formData["captcha"] = $captcha;
         $formData["messages"] = $messagesSlice;
         $formData["page"]=$numPage;
+
+        //header('Content-Type: image/png');
 
         //вывод формы
         $this->view->renderPartial("main", $formData);

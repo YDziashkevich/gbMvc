@@ -2,8 +2,11 @@
 
 class View
 {
+    private $image;
+
     public function __construct()
     {
+        $this->image = new ImageModel();
 
     }
 
