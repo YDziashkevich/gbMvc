@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class ImageModel генерирует изображение вопроса каптчи
+ */
 class ImageModel extends Model {
 
     protected $font = array("consola.ttf", "Archangelsk.ttf", "SweetAsCandy2.ttf");
@@ -7,11 +10,19 @@ class ImageModel extends Model {
     protected $imgHeight = 25;
     protected $text;
 
+    /**
+     * функция получениия вопроса каптчи
+     * @param $text текст вопроса
+     * @return $this указатель на объект
+     */
     public function setText($text){
         $this->text = $text;
         return $this;
     }
 
+    /**
+     * изображение каптчи
+     */
     public function send(){
         // Создаем холст
         $img = imagecreate($this->imgWidth, $this->imgHeight);
@@ -25,7 +36,6 @@ class ImageModel extends Model {
         $i=10;
 
         foreach($captcha as $sybolm){
-
         // рисуем картинку
         $fontSize = rand(12, 14);
         // Цвет текста
@@ -40,7 +50,8 @@ class ImageModel extends Model {
             FONTS_DIR.$this->font[rand(0,2)],    // имя шрифта
             $sybolm//$this->text[0]   // текст
         );
-        $i=$i+10;}
+        $i=$i+10;
+        }
 
         // заголовк для указания типа
         header('Content-Type: image/png');

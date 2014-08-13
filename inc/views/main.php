@@ -53,7 +53,7 @@
                         <label class="control-label" for="captcha"></label>
                         <div class="controls">
                             <div class="input-prepend">
-                                <span class="add-on"><img src="index.php?url=captcha/show<?php ?>"> <?//php echo $captcha ?></span>
+                                <span class="add-on"><img src="index.php?url=captcha/show/<?php ?>"> <?//php echo $captcha ?></span>
                                 <input id="captcha" name="captcha" class="input-large" placeholder="answer" type="text">
                             </div>
                         </div>
