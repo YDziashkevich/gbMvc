@@ -32,7 +32,7 @@ class ImageModel extends Model {
             ($this->imgHeight + $this->fontSize)/2, // сдвиг по вертикали
             $textColor, // цвет текста
             FONTS_DIR.$this->font,    // имя шрифта
-            self::$text
+            $this->text
             );   // текст
 
 

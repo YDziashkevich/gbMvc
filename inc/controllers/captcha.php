@@ -21,15 +21,12 @@ class CaptchaController
         }
         $_SESSION["answerCaptcha"]=$ans;
         self::$textCaptcha=$captchaText;
-        var_dump(self::$textCaptcha);
+
         return $captchaText;
     }
 
     public function showAction($prefix = ""){
-        //$question = Captcha::getCaptchaQuestion($prefix);
-        var_dump(self::$textCaptcha);
-
         $pic = new ImageModel();
-        $pic->setText(self::$textCaptcha)->send();
+        $pic->setText(self::getCaptcha())->send();
     }
 }
