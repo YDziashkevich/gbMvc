@@ -42,14 +42,14 @@ class MainController extends Controller
         $messagesSlice = array_slice($messages, $startIndex, VIEW_DEFAULT_NUM_MESSAGES);
 
         //генерируем каптчу
-        $captcha = $this->captcha->getCaptcha();
+        //$captcha = $this->captcha->getCaptcha();
 
 
         //ImageModel::$text = $captcha;
 
         //формирование данных для вывода формы
         $formData["sizeStorage"] = count($messages);
-        $formData["captcha"] = $captcha;
+        //$formData["captcha"] = $captcha;
         $formData["messages"] = $messagesSlice;
         $formData["page"]=$numPage;
 
