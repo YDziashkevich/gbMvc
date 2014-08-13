@@ -4,7 +4,7 @@ class CaptchaController
 {
     private static $textCaptcha;
 
-    public static function getCaptcha()
+    public function getCaptcha()
     {
         $a = rand(10, 18);
         $b = rand(1, 9);
@@ -21,6 +21,8 @@ class CaptchaController
         }
         $_SESSION["answerCaptcha"]=$ans;
         self::$textCaptcha=$captchaText;
+
+        $this->textCaptcha=$captchaText;
 
         return $captchaText;
     }

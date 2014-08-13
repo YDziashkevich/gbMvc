@@ -22,7 +22,7 @@ class App
         $actionName = (isset($urlParts[1])) ? $urlParts[1]."Action" : "indexAction";
 
         if(method_exists($controller, $actionName)){
-            call_user_func(array($controller, $actionName), $actionParams[0]);
+            call_user_func(array($controller, $actionName), $actionParams);
         }else{
             throw new Exception("Action not found");
         }
