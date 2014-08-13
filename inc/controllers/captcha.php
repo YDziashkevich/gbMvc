@@ -2,9 +2,9 @@
 
 class CaptchaController
 {
-    private static $textCaptcha;
+    private $textCaptcha;
 
-    public static function getCaptcha()
+    public function getCaptcha()
     {
         $a = rand(10, 18);
         $b = rand(1, 9);
@@ -20,16 +20,15 @@ class CaptchaController
                 break;
         }
         $_SESSION["answerCaptcha"]=$ans;
-        self::$textCaptcha=$captchaText;
-        var_dump(self::$textCaptcha);
+        $this->textCaptcha=$captchaText;
         return $captchaText;
     }
 
     public function showAction($prefix = ""){
         //$question = Captcha::getCaptchaQuestion($prefix);
-        var_dump(self::$textCaptcha);
+        //var_dump(self::$textCaptcha);
 
         $pic = new ImageModel();
-        $pic->setText(self::$textCaptcha)->send();
+        $pic->setText("123"/*self::$textCaptcha*/)->send();
     }
 }
