@@ -20,8 +20,11 @@ class View
         }
         require("inc/views/header.php");
         require("inc/views/" . $name . ".php");
-        require("inc/views/messages.php");
-        require("inc/views/paginator.php");
+
+        if($name=="main"){
+            require("inc/views/messages.php");
+            require("inc/views/paginator.php");
+        }
         require("inc/views/footer.php");
     }
 }

@@ -25,6 +25,12 @@ class MessageModel extends Model
         $put->execute($data);
     }
 
+    public function putMessages($message = array()){
+        $message["date"] = date("H:i m.d.y");
+        $put = Model::$dbc->prepare("INSERT INTO st_userMessage (name, email, message, date) value (:name, :email, :message, :date)");
+        $put->execute($message);
+    }
+
     /**
      * получение данных пользователя из формы
      * валидация данных
